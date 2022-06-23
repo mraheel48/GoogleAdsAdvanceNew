@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GoogleAdsAdvanceNew</string>
+
+    <string name="load_banner">Load Banner</string>
+    <string name="loadinterstitial">LoadInterstitial</string>
+    <string name="showinterstitial">ShowInterstitial</string>
+    <string name="loadrewardedad">LoadRewardedAd</string>
+    <string name="showrewardedad">showRewardedAd</string>
+    <string name="load_r_interstitial">Load R interstitial</string>
+    <string name="show_r_interstitial">Show R interstitial</string>
+    <string name="load_open_ads">Load Open Ads</string>
+    <string name="loading_ad">Loading Ad</string>
+    <string name="show_native_dialog">show Native Dialog</string>
+    <string name="close_app">Close App</string>
+    <string name="goo_to_next">Goo to next</string>
+</resources>
