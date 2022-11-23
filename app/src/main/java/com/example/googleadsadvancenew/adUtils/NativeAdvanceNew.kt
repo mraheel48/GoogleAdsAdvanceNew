@@ -1,8 +1,9 @@
-package com.example.googleadsadvancenew
+package com.example.googleadsadvancenew.adUtils
 
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.googleadsadvancenew.R
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.admanager.AdManagerAdRequest
 import com.google.android.gms.ads.nativead.MediaView

@@ -1,4 +1,4 @@
-package com.example.googleadsadvancenew;
+package com.example.googleadsadvancenew.adUtils;
 
 import android.app.Activity;
 import android.app.Application;
@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.googleadsadvancenew.other.MyApplication;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;

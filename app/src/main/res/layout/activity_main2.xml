@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity2">
 
     <Button
         android:id="@+id/btnLoadBanner"
@@ -97,11 +97,12 @@
         android:id="@+id/ad_view_container"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@color/purple_700"
+        android:background="@color/purple_200"
+        android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent">
+
 
     </FrameLayout>
 

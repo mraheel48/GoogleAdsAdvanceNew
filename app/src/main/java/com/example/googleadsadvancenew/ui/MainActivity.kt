@@ -1,4 +1,4 @@
-package com.example.googleadsadvancenew
+package com.example.googleadsadvancenew.ui
 
 import android.app.Dialog
 import android.content.Intent
@@ -6,22 +6,29 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.widget.FrameLayout
+import com.example.googleadsadvancenew.R
+import com.example.googleadsadvancenew.adUtils.AdManagerNew
+import com.example.googleadsadvancenew.adUtils.AdaptiveBannerLoad
+import com.example.googleadsadvancenew.adUtils.NativeAdvanceNew
+import com.example.googleadsadvancenew.adUtils.Util
+import com.example.googleadsadvancenew.databinding.ActivityMainBinding
+import com.example.googleadsadvancenew.other.MyApplication
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.rewarded.RewardItem
-
 
 class MainActivity : AppCompatActivity(), AdManagerNew.CallBackInterstitial,
     AdManagerNew.CallRewardedAd, AdManagerNew.CallBackRewardedInterstitialAd {
 
     private lateinit var adViewContainer: FrameLayout
     lateinit var backDialog: Dialog
+    private lateinit var mainBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        mainBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mainBinding.root)
 
         adViewContainer = findViewById(R.id.ad_view_container)
 
@@ -36,50 +43,50 @@ class MainActivity : AppCompatActivity(), AdManagerNew.CallBackInterstitial,
 
         NativeAdvanceNew.loadNativeAds(backDialog.findViewById(R.id.ad_view_native), this)
 
-        findViewById<View>(R.id.loadOpenAds).setOnClickListener {
+        mainBinding.loadOpenAds.setOnClickListener {
             if (MyApplication.appOpenManager != null) {
                 MyApplication.appOpenManager.fetchAd()
             }
         }
 
-        findViewById<View>(R.id.btnLoadBanner).setOnClickListener {
+        mainBinding.btnLoadBanner.setOnClickListener {
             Util.showToast(this, "calling banner")
             AdaptiveBannerLoad.loadBannerAd(adViewContainer, this@MainActivity)
         }
 
-        findViewById<View>(R.id.btnInterstitial).setOnClickListener {
+        mainBinding.btnInterstitial.setOnClickListener {
             Util.showToast(this, "calling Interstitial")
             AdManagerNew.loadInterstitialAd()
         }
 
-        findViewById<View>(R.id.btnInterstitialShow).setOnClickListener {
+        mainBinding.btnInterstitialShow.setOnClickListener {
             AdManagerNew.showInterstitial(this, this)
         }
 
-        findViewById<View>(R.id.btnLoadRewardedAd).setOnClickListener {
+        mainBinding.btnLoadRewardedAd.setOnClickListener {
             Util.showToast(this, "Load RewardedAd Request")
             AdManagerNew.loadRewardedAd()
         }
 
-        findViewById<View>(R.id.showRewardedAd).setOnClickListener {
+        mainBinding.showRewardedAd.setOnClickListener {
             AdManagerNew.showRewardedAd(this, this)
         }
 
-        findViewById<View>(R.id.loadInit).setOnClickListener {
+        mainBinding.loadInit.setOnClickListener {
             Util.showToast(this, "Loading Rewarded Interstitial Load")
             AdManagerNew.loadRewardedInterstitialAd()
         }
 
-        findViewById<View>(R.id.showInt).setOnClickListener {
+        mainBinding.showInt.setOnClickListener {
             Util.showToast(this, "Show Rewarded Interstitial Load")
             AdManagerNew.showRewardedInterstitialAd(this, this)
         }
 
-        findViewById<View>(R.id.showNative).setOnClickListener {
+        mainBinding.showNative.setOnClickListener {
             backDialog.show()
         }
 
-        findViewById<View>(R.id.go_next).setOnClickListener {
+        mainBinding.goNext.setOnClickListener {
             finish()
             startActivity(Intent(this, MainActivity::class.java))
         }
@@ -88,7 +95,6 @@ class MainActivity : AppCompatActivity(), AdManagerNew.CallBackInterstitial,
 
     override fun onStart() {
         super.onStart()
-
         /*if (MyApplication.appOpenManager != null) {
             MyApplication.appOpenManager.fetchAd()
         }*/

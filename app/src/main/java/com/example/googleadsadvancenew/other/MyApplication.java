@@ -1,12 +1,10 @@
-package com.example.googleadsadvancenew;
+package com.example.googleadsadvancenew.other;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-
 import androidx.multidex.MultiDexApplication;
 
-import com.google.android.gms.ads.MobileAds;
-
+import com.example.googleadsadvancenew.adUtils.AppOpenManager;
 
 @SuppressLint("StaticFieldLeak")
 public class MyApplication extends MultiDexApplication {
@@ -20,9 +18,9 @@ public class MyApplication extends MultiDexApplication {
         super.onCreate();
         context = this;
 
-        //Ads init
+        /*//Ads init
         MobileAds.initialize(this);
 
-        appOpenManager = new AppOpenManager(this);
+        appOpenManager = new AppOpenManager(this);*/
     }
 }

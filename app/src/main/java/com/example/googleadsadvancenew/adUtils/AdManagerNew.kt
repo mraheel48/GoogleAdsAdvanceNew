@@ -1,10 +1,11 @@
-package com.example.googleadsadvancenew
+package com.example.googleadsadvancenew.adUtils
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues.TAG
-import android.content.Context
 import android.util.Log
+import com.example.googleadsadvancenew.BuildConfig
+import com.example.googleadsadvancenew.other.MyApplication
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -17,8 +18,6 @@ import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoa
 //com.google.android.gms:play-services-ads:21.0.0
 @SuppressLint("StaticFieldLeak")
 object AdManagerNew {
-
-    val mContext: Context = MyApplication.context
 
     //Note! this id must b change not a Sample id interstitial Ads
     private var interstitialAdsSample: String = "ca-app-pub-3940256099942544/1033173712"
@@ -53,7 +52,7 @@ object AdManagerNew {
         if (mInterstitialAd == null) {
             Log.d(TAG, "InterstitialAd was loaded Request Send")
             InterstitialAd.load(
-                mContext,
+                MyApplication.context,
                 interstitialAds,
                 adRequest,
                 object : InterstitialAdLoadCallback() {
@@ -119,7 +118,7 @@ object AdManagerNew {
             Log.d(TAG, "loadRewardedAd request Send")
 
             RewardedAd.load(
-                mContext,
+                MyApplication.context,
                 rewardedAds,
                 adRequest,
                 object : RewardedAdLoadCallback() {
@@ -204,7 +203,7 @@ object AdManagerNew {
 
             // Use the test ad unit ID to load an ad.
             RewardedInterstitialAd.load(
-                mContext,
+                MyApplication.context,
                 rewardedInterstitialAds,
                 adRequest,
                 object : RewardedInterstitialAdLoadCallback() {

@@ -1,9 +1,11 @@
-package com.example.googleadsadvancenew
+package com.example.googleadsadvancenew.adUtils
 
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.googleadsadvancenew.BuildConfig
 import com.google.android.gms.ads.*
 
 object AdaptiveBannerLoad {
@@ -18,6 +20,7 @@ object AdaptiveBannerLoad {
 
     fun loadBannerAd(adViewContainer: FrameLayout?, activity: AppCompatActivity?) {
         if (adViewContainer != null && activity != null) {
+            adViewContainer.visibility = View.VISIBLE
             mAdView = AdView(activity)
             mAdView.adUnitId = getAdUnitId()
             adViewContainer.addView(mAdView)
@@ -28,9 +31,9 @@ object AdaptiveBannerLoad {
     }
 
     private fun getAdUnitId(): String {
-        return if (BuildConfig.DEBUG){
+        return if (BuildConfig.DEBUG) {
             AD_UNIT_ID_Test
-        }else{
+        } else {
             AD_UNIT_ID
         }
     }
@@ -55,7 +58,6 @@ object AdaptiveBannerLoad {
 
     //This method load the banner ads
     private fun adListenerBanner() {
-
         mAdView.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
@@ -85,6 +87,5 @@ object AdaptiveBannerLoad {
             }
         }
     }
-
 
 }

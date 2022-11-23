@@ -1,4 +1,4 @@
-package com.example.googleadsadvancenew
+package com.example.googleadsadvancenew.adUtils
 
 import android.app.Activity
 import android.content.Context
