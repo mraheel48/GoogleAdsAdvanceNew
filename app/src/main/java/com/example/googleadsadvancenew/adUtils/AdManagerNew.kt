@@ -48,7 +48,6 @@ object AdManagerNew {
     }
 
     fun loadInterstitialAd() {
-
         if (mInterstitialAd == null) {
             Log.d(TAG, "InterstitialAd was loaded Request Send")
             InterstitialAd.load(
@@ -84,7 +83,6 @@ object AdManagerNew {
     }
 
     fun callBackInterstitialAd() {
-
         mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdDismissedFullScreenContent() {
                 callBackInterstitial?.interstitialDismissedFullScreenContent()
@@ -141,7 +139,6 @@ object AdManagerNew {
     }
 
     fun showRewardedAd(activity: Activity, callBack: CallRewardedAd) {
-
         if (mRewardedAd != null) {
 
             callRewardedAd = callBack
@@ -160,7 +157,6 @@ object AdManagerNew {
     }
 
     fun callBackRewardedAd() {
-
         mRewardedAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
 
             override fun onAdShowedFullScreenContent() {

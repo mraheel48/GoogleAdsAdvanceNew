@@ -13,4 +13,6 @@
     <string name="show_native_dialog">show Native Dialog</string>
     <string name="close_app">Close App</string>
     <string name="goo_to_next">Goo to next</string>
+    <string name="load">Load</string>
+    <string name="show">Show</string>
 </resources>

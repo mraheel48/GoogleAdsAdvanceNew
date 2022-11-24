@@ -97,7 +97,6 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun loadBanner() {
 
-
         adView = AdView(this@MainActivity2)
         adView?.adUnitId = "ca-app-pub-3940256099942544/6300978111"
 

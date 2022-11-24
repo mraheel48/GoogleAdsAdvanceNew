@@ -2,12 +2,7 @@ package com.example.googleadsadvancenew.adUtils
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Insets
-import android.os.Build
-import android.util.DisplayMetrics
-import android.view.WindowInsets
 import android.widget.Toast
-
 
 object Util {
 
