@@ -21,7 +21,8 @@ class MainActivity3 : AppCompatActivity(), AdManagerSingle.CallBackAd {
         AdManagerSingle.updateCallBack(this)
 
         mainBinding.btnLaod.setOnClickListener {
-            AdManagerSingle.loadAd()
+            mainBinding.bannerAds.loadBannerAds()
+//            AdManagerSingle.loadAd()
         }
 
         mainBinding.btnShow.setOnClickListener {
@@ -32,6 +33,9 @@ class MainActivity3 : AppCompatActivity(), AdManagerSingle.CallBackAd {
                 Util.showToast(this, "Ads is not Loaded ")
             }
         }
+
+
+
     }
 
     override fun adDismissed() {
